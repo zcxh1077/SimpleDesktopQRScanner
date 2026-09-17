@@ -1,0 +1,2 @@
+pillow==12.2.0
+zxing-cpp==3.1.1
