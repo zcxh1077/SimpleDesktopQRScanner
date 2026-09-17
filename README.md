@@ -31,7 +31,7 @@ python qrscan.py --selftest   # QR の生成→読み取りの自己テスト
 
 ```powershell
 pip install pyinstaller
-pyinstaller --noconfirm --onefile --noconsole --noupx --name SimpleDesktopQRScanner qrscan.py
+pyinstaller --noconfirm --onefile --noconsole --noupx --name SimpleDesktopQRScanner --icon icon/app.ico --add-data "icon/app.ico;icon" qrscan.py
 ```
 
 `dist\SimpleDesktopQRScanner.exe` が生成されます。

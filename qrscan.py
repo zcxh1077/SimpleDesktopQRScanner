@@ -3,6 +3,7 @@ import ctypes.wintypes as wt
 import sys
 import tkinter as tk
 import webbrowser
+from pathlib import Path
 
 import zxingcpp
 from PIL import Image
@@ -53,6 +54,8 @@ class App:
         self.root = root
         self.last = None
         root.title("SimpleDesktopQRScanner")
+        # PyInstaller onefile unpacks bundled data to sys._MEIPASS
+        root.iconbitmap(default=Path(getattr(sys, "_MEIPASS", Path(__file__).parent)) / "icon" / "app.ico")
         root.geometry("360x420")
         root.attributes("-topmost", True)
         self.scan_area = tk.Frame(root, bg="#e33")  # the 3px left around the hole is the red frame
